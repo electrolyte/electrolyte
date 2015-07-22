@@ -1,5 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/x576xyqfpsfpj7kh?svg=true)](https://ci.appveyor.com/project/Electrolyte/electrolyte)
 ![](https://reposs.herokuapp.com/?path=electrolyte/electrolyte&style=flat)
+[![Join the chat at https://gitter.im/electrolyte/electrolyte](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/electrolyte/electrolyte?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Electrolyte
 

@@ -19,3 +19,7 @@ configuration: Debug
 build:
   project:  Src\electrolyte.all.sln
 
+
+notifications:
+  - provider: Webhook
+  url: https://webhooks.gitter.im/e/593321a32752db7c454d
