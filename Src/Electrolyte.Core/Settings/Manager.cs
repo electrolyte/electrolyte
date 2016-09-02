@@ -7,7 +7,7 @@ namespace Electrolyte.Core.Settings
     /// <summary>
     /// 
     /// </summary>
-    public class Manager
+    public class Manager : IManager
     {
         private readonly string _settingsFile;
 
