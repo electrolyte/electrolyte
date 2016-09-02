@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Module\IModule.cs" />
+    <Compile Include="Settings\IManager.cs" />
     <Compile Include="Settings\Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

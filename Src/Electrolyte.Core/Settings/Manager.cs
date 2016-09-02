@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq.Expressions;
 
@@ -16,6 +17,7 @@ namespace Electrolyte.Core.Settings
         public Manager(string settingsFile)
         {
             _settingsFile = settingsFile;
+            Items = new Dictionary<string, Dictionary<string, string>>();
         }
 
         /// <summary>
@@ -26,6 +28,15 @@ namespace Electrolyte.Core.Settings
         /// <param name="value"></param>
         public void Set(string module, string key, string value)
         {
+            if (String.IsNullOrEmpty(module))
+            {
+                throw new ArgumentException("Specified module not valid", module);
+            }
+            if (string.IsNullOrEmpty(key))
+            {
+                throw new ArgumentException("Specified key not valid", key);
+            }
+
             if (!Items.ContainsKey(module))
             {
                 Items.Add(module, new Dictionary<string, string>());

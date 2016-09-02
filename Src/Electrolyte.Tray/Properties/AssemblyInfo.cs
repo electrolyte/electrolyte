@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Electrolyte.Tray")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Electrolyte is a developer toolkit")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Electrolyte.Tray")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("Electrolyte Project Team")]
+[assembly: AssemblyProduct("Electrolyte")]
+[assembly: AssemblyCopyright("Copyright © 2015-2016")]
+[assembly: AssemblyTrademark("http://electrolyte.io")] // We're using this as a URL field
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

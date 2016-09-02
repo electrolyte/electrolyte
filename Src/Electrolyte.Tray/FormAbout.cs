@@ -14,12 +14,13 @@ namespace Electrolyte.Tray
         public FormAbout()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.Text = String.Format("About {0}", AssemblyProduct);
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
+            this.labelTrademark.Text = AssemblyTrademark;
+            this.labelTrademark.Links.Add(new LinkLabel.Link(0, AssemblyTrademark.Length, AssemblyTrademark));
         }
 
         #region Assembly Attribute Accessors
@@ -100,11 +101,29 @@ namespace Electrolyte.Tray
                 return ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
+
+        public string AssemblyTrademark
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTrademarkAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyTrademarkAttribute)attributes[0]).Trademark;
+            }
+        }
         #endregion
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
+        }
+
+        private void labelTrademark_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (e.Link != null) System.Diagnostics.Process.Start((string) e.Link.LinkData);
         }
     }
 }

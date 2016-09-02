@@ -24,11 +24,31 @@ namespace Electrolyte.Tray
             SysTrayIcon.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var s = new Electrolyte.Core.Settings.Manager("settings.yaml");
-            System.Diagnostics.Debug.WriteLine("MouseJiggler.Enabled = " + s.Get("MouseJiggler", "Enabled"));
-            s.Set("alan", "iscool", "true");
+            // Make sure to close out everything
+        }
+
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Exit
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form aboutForm = new FormAbout();
+            aboutForm.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Tell the application to close
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://electrolyte.io");
         }
     }
 }
