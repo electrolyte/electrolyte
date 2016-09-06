@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq.Expressions;
+using Electrolyte.Core.Logging;
 
 namespace Electrolyte.Core.Settings
 {
@@ -11,13 +10,21 @@ namespace Electrolyte.Core.Settings
     public class Manager : IManager
     {
         private readonly string _settingsFile;
+        private readonly Electrolyte.Core.Logging.ILog _log;
+        private Dictionary<string, Dictionary<string, string>> Items { get; set; }
+        public ILog Log { get; set; }
 
-        public Dictionary<string, Dictionary<string, string>> Items { get; set; }
-
-        public Manager(string settingsFile)
+        /// <summary>
+        /// Constructor for the settings manager
+        /// </summary>
+        /// <param name="log">Electrolyte.Core.Logging.ILog</param>
+        /// <param name="settingsFile">string</param>
+        public Manager(Electrolyte.Core.Logging.ILog log, string settingsFile)
         {
+            _log = log;
             _settingsFile = settingsFile;
             Items = new Dictionary<string, Dictionary<string, string>>();
+            Load();
         }
 
         /// <summary>
@@ -66,17 +73,31 @@ namespace Electrolyte.Core.Settings
 
         private void Load()
         {
-            var deserializer = new YamlDotNet.Serialization.Deserializer();
-            using (var streamReader = new StreamReader(_settingsFile))
+            if (_log.IsDebugEnabled)
             {
-                Items = deserializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(streamReader);
+                _log.Debug("Load() - Loading settings file '{0}'.", _settingsFile);
             }
-        }
+            var deserializer = new YamlDotNet.Serialization.Deserializer();
+            // check for file before we bother loading
+            if (System.IO.File.Exists(_settingsFile))
+            {
+                using (var streamReader = new System.IO.StreamReader(_settingsFile))
+                {
+                    Items = deserializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(streamReader);
+                }
+            }
+
+    }
 
         private void Save()
         {
+            if (_log.IsDebugEnabled)
+            {
+                _log.Debug("Save() - Saving settings file '{0}'.", _settingsFile);
+            }
             var serializer = new YamlDotNet.Serialization.Serializer();
-            using (var streamWriter = new StreamWriter(_settingsFile))
+
+            using (var streamWriter = new System.IO.StreamWriter(_settingsFile))
             {
                 serializer.Serialize(streamWriter, Items);
             }
