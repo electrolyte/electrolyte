@@ -1,4 +1,7 @@
-![](https://reposs.herokuapp.com/?path=electrolyte/electrolyte&style=flat)
+[![Build status](https://ci.appveyor.com/api/projects/status/26ts02r94ts1xdml?svg=true)](https://ci.appveyor.com/project/Electrolyte/electrolyte)
+[![Repo Size](https://reposs.herokuapp.com/?path=electrolyte/electrolyte&style=flat)](#)
+[![GitHub contributors](https://img.shields.io/github/contributors/electrolyte/electrolyte.svg?maxAge=2592000?style=flat-square)][contributing]
+[![License](https://img.shields.io/github/license/electrolyte/electrolyte.svg?maxAge=2592000?style=flat-square)][license]
 [![Join the chat at https://gitter.im/electrolyte/electrolyte](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/electrolyte/electrolyte?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Electrolyte
