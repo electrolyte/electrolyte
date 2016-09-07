@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75184423-F392-4D4F-95CA-D2C0DE10EF87}</ProjectGuid>
+    <ProjectGuid>{1C2C929D-1D15-4AC3-A585-8E2064C35053}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Electrolyte.Core</RootNamespace>
-    <AssemblyName>Electrolyte.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Electrolyte.Module.MouseJiggler</RootNamespace>
+    <AssemblyName>Electrolyte.Module.MouseJiggler</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,43 +30,52 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.3.8\lib\net45\NLog.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="YamlDotNet, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YamlDotNet.3.9.0\lib\net35\YamlDotNet.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logging\ILog.cs" />
-    <Compile Include="Logging\Log.cs" />
-    <Compile Include="Module\IModule.cs" />
-    <Compile Include="Module\Manager.cs" />
-    <Compile Include="Settings\IManager.cs" />
-    <Compile Include="Settings\Manager.cs" />
+    <Compile Include="MouseJiggler.cs" />
+    <Compile Include="MouseJigglerSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MouseJigglerSettings.Designer.cs">
+      <DependentUpon>MouseJigglerSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="nlog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Electrolyte.Core\Electrolyte.Core.csproj">
+      <Project>{75184423-f392-4d4f-95ca-d2c0de10ef87}</Project>
+      <Name>Electrolyte.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MouseJigglerSettings.resx">
+      <DependentUpon>MouseJigglerSettings.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo Post-build event for $(ProjectName)
+echo Copying files to $(SolutionDir)Electrolyte.Tray\bin\Debug\Modules
+if not exist  "$(SolutionDir)Electrolyte.Tray\bin\Debug\Modules" mkdir  "$(SolutionDir)Electrolyte.Tray\bin\Debug\Modules"
+xcopy "$(TargetPath)" "$(SolutionDir)Electrolyte.Tray\bin\Debug\Modules" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+goto BuildEventOK
+:BuildEventFailed
+echo Post-build for $(ProejctName) FAILED
+exit 1
+:BuildEventOK
+echo Post-build for $(ProjectName) COMPLETED</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

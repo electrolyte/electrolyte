@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Electrolyte.Tray", "Electro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Electrolyte.Core.Test", "Electrolyte.Core.Test\Electrolyte.Core.Test.csproj", "{6A08AB2E-6BAC-441B-A053-201783163375}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{D08E8F4F-0F9E-48A3-9F31-6CD429E7C4D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Electrolyte.Module.MouseJiggler", "Electrolyte.Module.MouseJiggler\Electrolyte.Module.MouseJiggler.csproj", "{1C2C929D-1D15-4AC3-A585-8E2064C35053}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,15 @@ Global
 		{6A08AB2E-6BAC-441B-A053-201783163375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A08AB2E-6BAC-441B-A053-201783163375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A08AB2E-6BAC-441B-A053-201783163375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2C929D-1D15-4AC3-A585-8E2064C35053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2C929D-1D15-4AC3-A585-8E2064C35053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2C929D-1D15-4AC3-A585-8E2064C35053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2C929D-1D15-4AC3-A585-8E2064C35053}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C2C929D-1D15-4AC3-A585-8E2064C35053} = {D08E8F4F-0F9E-48A3-9F31-6CD429E7C4D6}
 	EndGlobalSection
 EndGlobal

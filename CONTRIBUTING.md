@@ -3,15 +3,26 @@
 Please read these following guidelines for contibuting to Electrolyte:
 
  - [Code of Conduct](#coc)
+ - [License](#lic)
+ - [Contributor License Agreement](#cla)
  - [Questions or Problem](#question)
  - [Issues and Bugs](#issue)
  - [Feature Requests](#feature)
  - [Submission Guidelines](#submit)
- - [Contributor License Agreement](#cla)
 
 ## <a name="coc"></a> Code of Conduct
 Help us keep Electrolyte open and inclusive. Please read and follow our
 [Code of Conduct][codeofconduct]
+
+## <a name="lic"></a> License
+
+Electrolyte is license under the [Apache 2.0 License][license]
+
+You must agree to release your work under this license to contribute.
+
+## <a name="cla"></a> Contributor License Agreement
+
+Currently we do not require contributors to sign a CLA.
 
 ## <a name="question"></a> Have a Question or Problem?
 
@@ -51,7 +62,7 @@ Help us to maximize the effort we can spend fixing issues and adding new
 features, by not reporting duplicate issues.  Providing the following
 information will increase the chances of your issue being dealt with quickly:
 
-* **Overview of the Issue** - if an error is being thrown a stack trace helps
+* **Overview of the Issue** - if an error is being thrown, a stack trace helps
 * **Motivation for or Use Case** - explain why this is a bug for you
 * **Version(s)** - is it a regression?
 * **Reproduce the Error** - provide a working example set of steps to reproduce.
@@ -60,11 +71,11 @@ information will increase the chances of your issue being dealt with quickly:
 to what might be
   causing the problem (line of code or commit)
 
-## <a name="cla"></a> Contributor License Agreement
 
 [website]: http://electrolyte.io
 [github]: https://github.com/electrolyte/electrolyte
 [documentation]: http://electrolyte.io
-[codeofconduct]: https://github.com/electrolyte/code-of-conduct/blob/master/code-of-conduct.md
+[license]: https://github.com/electrolyte/electrolyte/blob/master/LICENSE
+[codeofconduct]: https://github.com/electrolyte/electrolyte/blob/master/code-of-conduct.md
 [reddit]: http://reddit.com/r/electrolyte
 [pullrequesthelp]: https://help.github.com/articles/using-pull-requests

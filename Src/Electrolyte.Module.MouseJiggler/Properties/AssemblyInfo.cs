@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Electrolyte.Core")]
-[assembly: AssemblyDescription("Electrolyte is a developer toolkit")]
+[assembly: AssemblyTitle("Electrolyte.Module.MouseJiggler")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Electrolyte Project Team")]
-[assembly: AssemblyProduct("Electrolyte")]
-[assembly: AssemblyCopyright("Copyright ©  2015-2016")]
-[assembly: AssemblyTrademark("http://electrolyte.io")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Electrolyte.Module.MouseJiggler")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("38d62797-5789-4e2a-93a9-9cfb760ca210")]
+[assembly: Guid("1c2c929d-1d15-4ac3-a585-8e2064c35053")]
 
 // Version information for an assembly consists of the following four values:
 //

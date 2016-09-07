@@ -6,16 +6,27 @@ namespace Electrolyte.Tray
 {
     partial class FormAbout : Form
     {
+        private static FormAbout _formSingleton = null;
+        public static FormAbout GetInstance()
+        {
+            if (_formSingleton == null)
+            {
+                _formSingleton = new FormAbout();
+                _formSingleton.FormClosed += delegate { _formSingleton = null; };
+            }
+            return _formSingleton;
+        }
+
         public FormAbout()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyProduct);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.textBoxDescription.Text = AssemblyDescription;
-            this.labelTrademark.Text = AssemblyTrademark;
-            this.labelTrademark.Links.Add(new LinkLabel.Link(0, AssemblyTrademark.Length, AssemblyTrademark));
+            Text = String.Format("About {0}", AssemblyProduct);
+            labelProductName.Text = AssemblyProduct;
+            labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            labelCopyright.Text = AssemblyCopyright;
+            textBoxDescription.Text = AssemblyDescription;
+            labelTrademark.Text = AssemblyTrademark;
+            labelTrademark.Links.Add(new LinkLabel.Link(0, AssemblyTrademark.Length, AssemblyTrademark));
         }
 
         #region Assembly Attribute Accessors
@@ -113,12 +124,13 @@ namespace Electrolyte.Tray
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void labelTrademark_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (e.Link != null) System.Diagnostics.Process.Start((string) e.Link.LinkData);
         }
+
     }
 }
