@@ -33,5 +33,5 @@ To be part of the project you must follow our [Code of Conduct][codeofconduct]
 [github]: https://github.com/electrolyte/electrolyte
 [documentation]: http://electrolyte.io
 [license]: https://github.com/electrolyte/electrolyte/blob/master/LICENSE
-[codeofconduct]: https://github.com/electrolyte/electrolyte/blob/master/code-of-conduct.md
+[codeofconduct]: https://github.com/electrolyte/code-of-conduct/blob/master/CODE-OF-CONDUCT.md
 [contributing]: https://github.com/electrolyte/electrolyte/blob/master/CONTRIBUTING.md
