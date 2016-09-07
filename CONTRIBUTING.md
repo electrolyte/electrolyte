@@ -65,6 +65,6 @@ to what might be
 [website]: http://electrolyte.io
 [github]: https://github.com/electrolyte/electrolyte
 [documentation]: http://electrolyte.io
-[codeofconduct]: https://github.com/electrolyte/code-of-conduct/blob/master/code-of-conduct.md
+[codeofconduct]: https://github.com/electrolyte/code-of-conduct/blob/master/CODE-OF-CONDUCT.md
 [reddit]: http://reddit.com/r/electrolyte
 [pullrequesthelp]: https://help.github.com/articles/using-pull-requests
